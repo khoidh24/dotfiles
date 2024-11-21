@@ -4,7 +4,7 @@
 
 ## Setup 💽
 
-### Requirements 🐙
+### All toys I'm using in this config 🐙
 
 - [Neovim](https://neovim.io/) >= **0.9.0** (needs to be built with **LuaJIT**)
 - [Tmux](https://github.com/tmux/tmux/wiki)
@@ -22,7 +22,9 @@
   - [alacritty](https://github.com/alacritty/alacritty) **_(Linux, MacOS & Windows)_**
   - [iterm2](https://iterm2.com/) **_(MacOS)_**
 
-## Fish Shell setup (macOS & Linux)
+### Fish Shell setup (macOS & Linux)
+
+🌿 **A small warning 🚧:** If you wanna code on Terminal completely, This setup will be a MUST HAVE toys in your rice collection 🍚
 
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
@@ -38,12 +40,21 @@
 Follow these steps:
 
 1. Clone the repo:
-```git clone https://github.com/khoidh24/nvim.git```
+
+```txt 
+git clone https://github.com/khoidh24/nvim.git
+```
 
 2. Go to repo folder:
-```cd nvim```
+
+```txt 
+cd nvim
+```
 
 3. Use install Bash script:
-```./install.sh```
+
+```txt 
+./install.sh
+```
 
 4. Done! Now enjoy your new Neovim setup 😊
