@@ -14,12 +14,13 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver",
+          "ts_ls",
           "html",
           "cssls",
           "tailwindcss",
           "emmet_ls",
         },
+        automatic_installation = true,
       })
     end,
   },
@@ -37,7 +38,7 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
       lspconfig.html.setup({
@@ -69,10 +70,18 @@ return {
     config = function()
       local configs = require("nvim-treesitter.configs")
       configs.setup({
-        auto_install = true,
-        highlight = { enable = true },
+        highlight = { enable = true, use_languagetree = true },
         indent = { enable = true },
-        autotag = { enable = true },
+        ensure_installed = {
+          "html",
+          "css",
+          "lua",
+          "json",
+          "markdown",
+          "javascript",
+          "typescript",
+          "tsx",
+        },
       })
     end,
   },
