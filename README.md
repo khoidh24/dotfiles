@@ -1,6 +1,6 @@
 # Puffcatz's Neovim and Tmux dotfiles 🌿
 
-![nvim screenshot](./images/nvim.png)
+![nvim screenshot](./nvim.png)
 
 ## Setup 💽
 
