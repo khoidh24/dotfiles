@@ -34,3 +34,16 @@
 - [fzf](https://github.com/PatrickF1/fzf.fish) - Interactive filtering
 
 ## How to use my configurations 👌
+
+Follow these steps:
+
+1. Clone the repo:
+```git clone https://github.com/khoidh24/nvim.git```
+
+2. Go to repo folder:
+```cd nvim```
+
+3. Use install Bash script:
+```./install.sh```
+
+4. Done! Now enjoy your new Neovim setup 😊
