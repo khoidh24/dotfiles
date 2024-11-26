@@ -24,7 +24,7 @@
 
 ### Fish Shell setup (macOS & Linux)
 
-🌿 **A small warning 🚧:** If you wanna code on Terminal completely, This setup will be a MUST HAVE toys in your rice collection 🍚
+🌿 **A small notice 🚧:** If you wanna code on Terminal completely, This setup will be a MUST HAVE toy in your rice collection 🍚
 
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
