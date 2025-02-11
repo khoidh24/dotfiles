@@ -37,24 +37,4 @@
 
 ## How to use my configurations 👌
 
-Follow these steps:
-
-1. Clone the repo:
-
-```txt 
-git clone https://github.com/khoidh24/nvim.git
-```
-
-2. Go to repo folder:
-
-```txt 
-cd nvim
-```
-
-3. Use install Bash script:
-
-```txt 
-./install.sh
-```
-
-4. Done! Now enjoy your new Neovim setup 😊
+Just copy as same as my git directories 🥰
