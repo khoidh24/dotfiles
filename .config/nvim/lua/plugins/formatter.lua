@@ -9,7 +9,11 @@ return {
 				null_ls.builtins.formatting.prettier,
 			},
 		})
-
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { noremap = true, silent = true })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			pattern = "*",
+			callback = function()
+				vim.lsp.buf.format({ async = false })
+			end,
+		})
 	end,
 }
