@@ -28,7 +28,7 @@
 
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
-- [Tide](https://github.com/IlanCosman/tide) - Shell theme. Use version 6: `fisher install ilancosman/tide@v6`
+- [Tide](https://github.com/IlanCosman/tide) - Shell theme. I am using Tide v6: `fisher install ilancosman/tide@v6`
 - [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I am using Hack.
 - [z for fish](https://github.com/jethrokuan/z) - Directory jumping
 - [Eza](https://github.com/eza-community/eza) - `ls` replacement
