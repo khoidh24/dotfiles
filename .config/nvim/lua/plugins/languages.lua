@@ -93,6 +93,7 @@ return {
 					"tsx",
 					"json",
 					"http",
+					"go",
 				},
 			})
 		end,

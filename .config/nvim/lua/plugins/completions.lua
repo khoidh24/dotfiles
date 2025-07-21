@@ -81,7 +81,7 @@ return {
 								Enum = "  ",
 								Keyword = "  ",
 								Snippet = "  ",
-								Color = "󰝤  ",
+								Color = "  ",
 								File = "  ",
 								Reference = "  ",
 								Folder = "  ",
@@ -138,7 +138,7 @@ return {
 			document_color = {
 				enabled = true, -- can be toggled by commands
 				kind = "inline", -- "inline" | "foreground" | "background"
-				inline_symbol = "󰝤 ", -- only used in inline mode
+				inline_symbol = " ", -- only used in inline mode
 				debounce = 100, -- in milliseconds, only applied in insert mode
 			},
 		},

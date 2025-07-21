@@ -1,58 +1,64 @@
+-- ==========================================
+-- Key Mappings
+-- ==========================================
+
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
+
+-- Set leader key
 vim.g.mapleader = " "
 
--- Increment/decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
+-- =====================
+-- General
+-- =====================
+keymap.set("n", "+", "<C-a>", opts)        -- increment number
+keymap.set("n", "-", "<C-x>", opts)        -- decrement number
+keymap.set("n", "db", "vb_d", opts)        -- delete word backwards
+keymap.set("n", "<C-a>", "gg<S-v>G", opts) -- select all
+keymap.set("n", "<C-m>", "<C-i>", opts)    -- move forward in jumplist
 
--- Delete a word backwards
-keymap.set("n", "db", "vb_d")
+-- =====================
+-- Tab Management
+-- =====================
+keymap.set("n", "te", ":tabedit<CR>", opts)      -- new tab
+keymap.set("n", "<Tab>", ":tabnext<CR>", opts)   -- next tab
+keymap.set("n", "<S-Tab>", ":tabprev<CR>", opts) -- previous tab
+keymap.set("n", "tw", ":tabclose<CR>", opts)     -- close tab
 
--- Select all
-keymap.set("n", "<C-a>", "gg<S-v>G")
+-- =====================
+-- Window Management
+-- =====================
+keymap.set("n", "ss", ":split<CR>", opts)  -- horizontal split
+keymap.set("n", "sv", ":vsplit<CR>", opts) -- vertical split
 
--- Jumplist
-keymap.set("n", "<C-m>", "<C-i>", opts)
+-- Move between windows
+keymap.set("n", "sh", "<C-w>h", opts)
+keymap.set("n", "sk", "<C-w>k", opts)
+keymap.set("n", "sj", "<C-w>j", opts)
+keymap.set("n", "sl", "<C-w>l", opts)
 
--- Tab management
-keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
-keymap.set("n", "tw", ":tabclose<Return>", opts)
+-- Resize windows
+keymap.set("n", "<C-S-h>", "<C-w><", opts)
+keymap.set("n", "<C-S-l>", "<C-w>>", opts)
+keymap.set("n", "<C-S-k>", "<C-w>+", opts)
+keymap.set("n", "<C-S-j>", "<C-w>-", opts)
 
--- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
-
--- Move window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
-
--- Resize window
-keymap.set("n", "<C-S-h>", "<C-w><")
-keymap.set("n", "<C-S-l>", "<C-w>>")
-keymap.set("n", "<C-S-k>", "<C-w>+")
-keymap.set("n", "<C-S-j>", "<C-w>-")
-
--- Diagnostics
+-- =====================
+-- LSP / Diagnostics
+-- =====================
 keymap.set("n", "<C-j>", function()
-	vim.diagnostic.goto_next()
+  vim.diagnostic.goto_next()
 end, opts)
 
--- Save file and quit
-keymap.set("n", "<Leader>w", ":w<Return>", opts)
-keymap.set("n", "<Leader>q", ":q<CR>")
-keymap.set("n", "<Leader>Q", ":qa<CR>")
+-- =====================
+-- Save / Quit
+-- =====================
+keymap.set("n", "<Leader>w", ":w<CR>", opts)  -- save file
+keymap.set("n", "<Leader>q", ":q<CR>", opts)  -- quit file
+keymap.set("n", "<Leader>Q", ":qa<CR>", opts) -- quit all
 
--- Undercurl
+-- =====================
+-- Undercurl (visual)
+-- =====================
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
-
--- Disable arrow keys
-keymap.set("", "<up>", "<nop>", opts)
-keymap.set("", "<down>", "<nop>", opts)
-keymap.set("", "<left>", "<nop>", opts)
-keymap.set("", "<right>", "<nop>", opts)

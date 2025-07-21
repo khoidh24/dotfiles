@@ -1,64 +1,77 @@
--- pumblend color transparent for config
-vim.cmd("set pumblend=0")
-vim.cmd("highlight pumblend guibg=NONE")
-
--- Undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
-
--- Add asterisks in block comments
-vim.opt.formatoptions:append({ "r" })
-
-vim.cmd([[au BufNewFile,BufRead *.astro setf astro]])
-vim.cmd([[au BufNewFile,BufRead Podfile setf ruby]])
-
-if vim.fn.has("nvim-0.8") == 1 then
-	vim.opt.cmdheight = 0
-end
+-- ==========================================
+-- Basic Neovim Configuration
+-- ==========================================
 
 local opt = vim.opt
+local cmd = vim.cmd
+local fn = vim.fn
 
--- UTF-8 Encoding
+-- Encoding
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 
--- Tabs
+-- Tabs & Indentation
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
+opt.autoindent = true
+opt.smartindent = true
 
--- Indent
-opt.autoindent = true -- copy indent from current line when starting new one
-opt.smartindent = true -- smart indenting for C-like languages
-
--- Line numbers
+-- Line Numbers
 opt.number = true
 opt.relativenumber = true
 
--- Cursor line
+-- Cursor
 opt.cursorline = true
 
--- Search
-opt.hlsearch = true -- highlight search results
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitivf
+-- Searching
+opt.hlsearch = true
+opt.ignorecase = true
+opt.smartcase = true
 
--- History
-opt.undofile = true
+-- History & Undo
 opt.history = 1000
-
--- Split
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
+opt.undofile = true
 
 -- Clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+opt.clipboard:append("unnamedplus")
 
--- Backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+-- Backspace behavior
+opt.backspace = { "indent", "eol", "start" }
 
--- Terminal GUI
+-- UI
 opt.termguicolors = true
-opt.background = "dark" -- colorschemes that can be light or dark will be made dark
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+opt.background = "dark"
+opt.signcolumn = "yes"
+
+-- Window Splitting
+opt.splitright = true
+opt.splitbelow = true
+
+-- cmdheight = 0 (only in Neovim 0.8+)
+if fn.has("nvim-0.8") == 1 then
+	opt.cmdheight = 0
+end
+
+-- ==========================================
+-- Visual Enhancements
+-- ==========================================
+
+-- Transparent popup menu (disable blend)
+opt.pumblend = 0
+cmd("highlight Pmenu guibg=NONE") -- fix: 'pumblend' is a number, not a highlight group
+
+-- Undercurl in supported terminals
+cmd([[let &t_Cs = "\e[4:3m"]])
+cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- Add asterisk when continuing block comment lines
+opt.formatoptions:append("r")
+
+-- ==========================================
+-- Filetype Specific Settings
+-- ==========================================
+
+cmd([[au BufNewFile,BufRead *.astro setfiletype astro]])
+cmd([[au BufNewFile,BufRead Podfile setfiletype ruby]])
