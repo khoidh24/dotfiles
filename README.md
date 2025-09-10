@@ -1,4 +1,4 @@
-# Puffcatz's Neovim and Tmux dotfiles 🌿
+# Puffcatz's dotfiles 🌿
 
 ![nvim screenshot](./nvim.png)
 
